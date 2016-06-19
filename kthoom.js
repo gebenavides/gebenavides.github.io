@@ -114,8 +114,7 @@ kthoom.resetFileUploader = function() {
   });
   getElem('menu-open-local-files').addEventListener('change',
       getLocalFiles, false);
-  getElem('menu-open-google-drive').addEventListener('click',
-      kthoom.google.doDrive, false);
+  //getElem('menu-open-google-drive').addEventListener('click', kthoom.google.doDrive, false);
 }
 
 kthoom.initProgressMeter = function() {
@@ -201,7 +200,9 @@ kthoom.initProgressMeter = function() {
   
   
   svg.appendChild(g);
-  pdiv.appendChild(svg);
+  
+//Commented out when Header was removed
+//  pdiv.appendChild(svg);
   
   svg.onclick = function(e) {
     for (var x = pdiv, l = 0; x != document.documentElement; x = x.parentNode) l += x.offsetLeft;
@@ -220,17 +221,21 @@ kthoom.setProgressMeter = function(pct, opt_label) {
   if (totalImages == 0) smartpct = pct;
   
    // + Math.min((pct - lastCompletion), 100/totalImages * 0.9 + (pct - lastCompletion - 100/totalImages)/2, 100/totalImages);
-  var oldval = parseFloat(getElem('meter').getAttribute('width'));
-  if (isNaN(oldval)) oldval = 0;
+  
+  //Commentd out when Progress bar was deleted.
+  //var oldval = parseFloat(getElem('meter').getAttribute('width'));
+  //if (isNaN(oldval)) oldval = 0;
   var weight = 0.5;
-  smartpct = (weight * smartpct + (1-weight) * oldval);
+  smartpct = (weight * smartpct + (1-weight) /* *oldval */);
   if (pct == 100) smartpct = 100;
-    
+  
+  /* Commetned out when Progress bar was deleted.  
   if (!isNaN(smartpct)) {
     getElem('meter').setAttribute('width', smartpct + '%');
   }
   var title = getElem('progress_title');
   while (title.firstChild) title.removeChild(title.firstChild);
+  
 
   var labelText = pct.toFixed(2) + '% ' + imageFiles.length + '/' + totalImages + '';
   if (opt_label) {
@@ -251,7 +256,7 @@ kthoom.setProgressMeter = function(pct, opt_label) {
   if (pct > 0) {
     getElem('nav').className = '';
     getElem('progress').className = '';
-  }
+  }*/
 }
 
 // Attempts to read the files that the user has chosen.
@@ -308,7 +313,7 @@ function loadFromArrayBuffer(ab) {
         }
         
         // hide logo
-        getElem('logo').setAttribute('style', 'display:none');
+        //getElem('logo').setAttribute('style', 'display:none');
 
         // display first page if we haven't yet
         if (imageFiles.length == currentImage + 1) {
@@ -366,12 +371,14 @@ var createURLFromArray = function(array, mimeType) {
 
 
 function updatePage() {
+  /* Deleted when ProgressBar was Deleted.
   var title = getElem('page');
   while (title.firstChild) title.removeChild(title.firstChild);
   title.appendChild(document.createTextNode( (currentImage+1) + '/' + totalImages ));
   
   getElem('meter2').setAttribute('width',
-      100 * (totalImages == 0 ? 0 : ((currentImage+1)/totalImages)) + '%');
+      100 * (totalImages == 0 ? 0 : ((currentImage+1)/totalImages)) + '%');*/
+  
   if (imageFiles[currentImage]) {
     setImage(imageFiles[currentImage].dataURI);
   } else {
@@ -594,13 +601,14 @@ function closeBook() {
   totalImages = 0;
   lastCompletion = 0;
   
-  // display logo
-  getElem('logo').setAttribute('style', 'display:block');
+  // display logo, commented out when Logo was put into background
+  //getElem('logo').setAttribute('style', 'display:block');
   
-  getElem('nav').className = 'hide';
-  getElem('progress').className = 'hide';
+  //Nav and progress changed when they were commented out.
+  //getElem('nav').className = 'hide';
+  //getElem('progress').className = 'hide';
   
-  getElem('meter').setAttribute('width', '0%');
+  //getElem('meter').setAttribute('width', '0%');
   
   kthoom.setProgressMeter(0);
   updatePage();
@@ -652,7 +660,7 @@ function keyHandler(evt) {
     overlayStyle.display = 'block';
   }
 
-  if (getComputedStyle(getElem('progress')).display == 'none') return;
+  //if (getComputedStyle(getElem('progress')).display == 'none') return;
   canKeyNext = ((document.body.offsetWidth+document.body.scrollLeft)/ document.body.scrollWidth) >= 1;
   canKeyPrev = (scrollX <= 0);
 
@@ -773,9 +781,10 @@ function init() {
         showNextPage();
       }
     }, false);
+    /*
     getElem('libraryTab').addEventListener('click', function() {
       toggleLibraryOpen();
-    }, false);
+    }, false);*/
   }
 }
 
