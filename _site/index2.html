@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>eComic Reader</title>
+
+    <!-- Bootstrap -->
+    <!--<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,600,300' rel='stylesheet' type='text/css'> -->
+
+    <link href="shadow.css" rel="stylesheet" >
+
+    <script type="application/javascript" src="kthoom-google.js"></script>
+    <script type="application/javascript" src="kthoom.js"></script>
+    <script type="application/javascript" src="./bitjs/archive.js"></script>
+    <script id="google"
+        src="https://apis.google.com/js/client.js?onload=kthoom.google.boot"
+        onerror="window.onload=kthoom.google.boot" async></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- <style>
+      html, body {
+        height: 100%;
+        font-family: "Open Sans", Helvetica, Arial, Sans-serif;
+      }
+      body {
+        background-image: url('../images/html5_logo.png'), url('../images/logo.png');
+        background-size: 256px 256px;
+        background-position: bottom left, bottom right;  
+        background-repeat: no-repeat;
+        color: #999;
+        background-color: #111
+      }
+      h1 {
+        color: #fff;
+      }
+      body .modal {
+        color: #333;
+    </style> -->
+  </head>
+
+
+  <body onload="init()">
+  <div id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">          
+          <a class="brand" href="#">eComic Reader</a>
+          
+          
+        </div>
+      </div>
+    </div>
+
+    <h1>Hello, world!</h1>
+
+      <div class="container" id="introText">
+        <div class="row">
+          <div class="span10">
+            <h1>JavaScript &amp; HTML5 Comic Reader</h1>
+            <p class="lead">Simply drag and drop a CBZ or CBR file onto the page to start reading.</p>
+            <div id="alertArea"></div>
+            <p>Started as a <a href="http://www.raymondcamden.com/index.cfm/2012/5/29/Building-an-HTML5-Comic-Book-Reader#c2DCDC6B6-924D-59C5-1E7A546B79CAC44F">weekend project</a> by  <a href="http://www.raymondcamden.com/">Raymond Camden</a>. eComic Reader is built upon  both <a href="http://rkuykendall.com/">Robert Kuykendall</a>'s Web Slinger and <a href="www.codedread.com"> Jeff Schiller</a>'s Kthoom. Feel free to check out the code on <a href="https://github.com/gebenavides/eComicReader">GitHub</a>, and comment or build upon it yourself!<p>
+          </div>
+        </div>
+      </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../jquery-3.0.0.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="shadow.css"></script>
+  </body>
+</html>
