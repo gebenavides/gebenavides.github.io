@@ -26,11 +26,16 @@ html, body {
         margin-top: 100px;
       }
 
-      #mainImage {
-      	margin-top: 18px
+      #mainImage-container {
+      	width: 100%;
+      	text-align: center;
       }
 
+      #mainImage {
+      	margin-top: 18px;
+      	display: inline;
 
+      }
 
 .nav-collapse.collapse {
   height: auto;
